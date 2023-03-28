@@ -71,7 +71,7 @@ body {
   margin-top: 20px;
   font-size: 20px;
 }
-.contents ul span {
+.contents ul span.button {
   cursor: pointer;
 }
 /* contents end */

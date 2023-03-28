@@ -94,6 +94,7 @@ const createElementLi = (value, index, complete) => {
   //li 생성
   const li = document.createElement("li");
   const span = document.createElement("span");
+  const button = document.createElement("span");
   span.innerHTML =
     index +
     ". " +
@@ -103,7 +104,7 @@ const createElementLi = (value, index, complete) => {
     time +
     "</span>";
   li.id = value.id;
-  const deleteButton = document.createElement("span");
+  const deleteButton = document.createElement("button");
 
   //todos 완료 했을때
   if (complete) {
