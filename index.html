@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- css -->
+    <link href="./index.css" rel="stylesheet" type="text/css" />
+    <link href="./reset.css" rel="stylesheet" type="text/css" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Today Todo List</h1>
+    </div>
+
+    <div class="input-text">
+      <input
+        type="text"
+        class="todo-input"
+        placeholder="오늘 할 일을 적어주세요"
+      />
+      <button class="button-input">입력</button>
+    </div>
+
+    <div class="tab">
+      <div class="items todos select">오늘 할 일</div>
+      <div class="items complete">끝낸 일</div>
+    </div>
+
+    <hr class="separate" color="red" />
+
+    <div class="contents">
+      <ul class="contents-ul"></ul>
+    </div>
+
+    <!-- javaScrpit -->
+    <script src="./index.js"></script>
+  </body>
+</html>

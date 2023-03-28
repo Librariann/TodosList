@@ -1,0 +1,77 @@
+body {
+  width: 100%;
+}
+
+/* header start */
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+/* header end */
+
+/* input-text start */
+.input-text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.input-text .todo-input {
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+.input-text button {
+  margin-left: 10px;
+}
+/* input-text end */
+
+/* tab start */
+.tab {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.tab .items {
+  width: 100%;
+  margin: 5px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  transition: 0.3s;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+.tab .items:hover {
+  background-color: #9c1313;
+}
+.tab .items.select {
+  background-color: #9c1313;
+}
+/* tab end */
+
+/* separate start */
+.separate {
+  margin-bottom: 20px;
+}
+/* separate end */
+
+/* contents start */
+.contents {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.contents ul li {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 20px;
+}
+.contents ul span {
+  cursor: pointer;
+}
+/* contents end */
