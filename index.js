@@ -94,7 +94,6 @@ const createElementLi = (value, index, complete) => {
   //li 생성
   const li = document.createElement("li");
   const span = document.createElement("span");
-  const button = document.createElement("span");
   span.innerHTML =
     index +
     ". " +
