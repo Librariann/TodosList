@@ -196,7 +196,7 @@ const removeAllChild = () => {
 
 //오늘 할 일 목록 불러오기
 const getTodosList = () => {
-  removeAllchild();
+  removeAllChild();
   todosButton.classList.add("select");
   completeTodosButton.classList.remove("select");
   getTodosArray.map((value, index) => {
@@ -206,7 +206,7 @@ const getTodosList = () => {
 
 //완료 목록 불러오기
 const getCompleteTodosList = () => {
-  removeAllchild();
+  removeAllChild();
   todosButton.classList.remove("select");
   completeTodosButton.classList.add("select");
   getCompleteTodosArray.map((value, index) => {
