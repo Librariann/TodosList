@@ -188,7 +188,7 @@ const clickToSaveTodo = () => {
 };
 
 //li 완전 삭제 - 번호 문제때문에 사용
-const removeAllchild = () => {
+const removeAllChild = () => {
   while (contentsUl.hasChildNodes()) {
     contentsUl.removeChild(contentsUl.firstChild);
   }
