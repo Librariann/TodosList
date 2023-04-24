@@ -15,6 +15,7 @@ function callNewDate() {
     newDate.getSeconds() < 10
       ? "0" + newDate.getSeconds()
       : newDate.getSeconds();
+
   const time =
     year +
     "-" +

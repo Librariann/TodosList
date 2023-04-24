@@ -7,9 +7,11 @@ const completeTodosButton = document.querySelector(".complete");
 
 const SAVE = "TODOS";
 const SAVE_COMPLETE = "COMPLETE";
+const SAVE_COMPLETE_LOG = "LOG";
 
 let getTodosArray = [];
 let getCompleteTodosArray = [];
+let completeTodosLogArray = [];
 
 //uuid 생성
 const uuidv4 = () => {
@@ -29,6 +31,14 @@ const saveTodo = () => {
 //할 일 완료 목록
 const saveCompleteTodos = () => {
   localStorage.setItem(SAVE_COMPLETE, JSON.stringify(getCompleteTodosArray));
+};
+
+//완료 목록 Log 저장
+const saveCompleteLogTodos = () => {
+  localStorage.setItem(
+    SAVE_COMPLETE_LOG,
+    JSON.stringify(completeTodosLogArray)
+  );
 };
 
 //LocalStorage에 있는 todos, complete 목록 불러옴
@@ -51,10 +61,37 @@ const getLocalStorage = () => {
 const deleteCompleteTodo = (event) => {
   const target = event.target.parentElement;
   target.remove();
+  const completeLog = getCompleteTodosArray.filter(
+    (item) => item.id === target.id
+  );
+
   const complete = getCompleteTodosArray.filter(
     (item) => item.id !== target.id
   );
   getCompleteTodosArray = complete;
+
+  completeTodosLogArray.push(completeLog[0]);
+
+  saveCompleteTodos();
+  saveCompleteLogTodos();
+  getCompleteTodosList();
+};
+
+//완료목록 TodoList 로 돌리기
+const undoCompleteTodo = (event) => {
+  const target = event.target.parentElement;
+  target.remove();
+  const undoComplete = getCompleteTodosArray.filter(
+    (item) => item.id === target.id
+  );
+  getTodosArray.push(undoComplete[0]);
+
+  const complete = getCompleteTodosArray.filter(
+    (item) => item.id !== target.id
+  );
+  getCompleteTodosArray = complete;
+
+  saveTodo();
   saveCompleteTodos();
   getCompleteTodosList();
 };
@@ -104,9 +141,13 @@ const createElementLi = (value, index, complete) => {
     "</span>";
   li.id = value.id;
   const deleteButton = document.createElement("button");
+  const undoButton = document.createElement("button");
 
   //todos 완료 했을때
   if (complete) {
+    undoButton.innerHTML = "&#9194;";
+    undoButton.addEventListener("click", undoCompleteTodo);
+
     deleteButton.innerHTML = "&#10060;";
     deleteButton.addEventListener("click", deleteCompleteTodo);
   }
@@ -118,7 +159,9 @@ const createElementLi = (value, index, complete) => {
   }
 
   li.appendChild(span);
+  complete ? li.appendChild(undoButton) : "";
   li.appendChild(deleteButton);
+
   contentsUl.appendChild(li);
 };
 
