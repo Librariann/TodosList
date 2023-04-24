@@ -4,10 +4,13 @@ body {
 
 /* header start */
 .header {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.header h2 {
+  margin-top: 10px;
 }
 /* header end */
 

@@ -78,9 +78,9 @@ const completeTodo = (event) => {
 
 /**
  *
- * @param {Object} value
- * @param {Int} index
- * @param {Boolean} complete
+ * @param {Object} value todo value
+ * @param {Int} index todo 순번
+ * @param {Boolean} complete todo 완료 여부 true, false
  */
 const createElementLi = (value, index, complete) => {
   const newDate = new Date(value.date);
