@@ -7,10 +7,17 @@ function callNewDate() {
   const year = newDate.getFullYear();
   const month = newDate.getMonth() + 1;
   const date = newDate.getDate();
-  const hour = newDate.getHours();
-  const minutes = newDate.getMinutes();
 
-  //10초 미만 일때 초 앞에 0을 붙여준다 ex) 01,02,03..
+  //10시 미만 일때 시간 앞에 0을 붙여준다 ex) 01,02,03...
+  const hour =
+    newDate.getHours() < 10 ? "0" + newDate.getHours() : newDate.getHours();
+  //10분 미만 일때 초 앞에 0을 붙여준다 ex) 01,02,03...
+  const minutes =
+    newDate.getMinutes() < 10
+      ? "0" + newDate.getMinutes()
+      : newDate.getMinutes();
+
+  //10초 미만 일때 초 앞에 0을 붙여준다 ex) 01,02,03...
   const seconds =
     newDate.getSeconds() < 10
       ? "0" + newDate.getSeconds()
