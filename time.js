@@ -11,7 +11,8 @@ function callNewDate() {
   //10시 미만 일때 시간 앞에 0을 붙여준다 ex) 01,02,03...
   const hour =
     newDate.getHours() < 10 ? "0" + newDate.getHours() : newDate.getHours();
-  //10분 미만 일때 초 앞에 0을 붙여준다 ex) 01,02,03...
+
+  //10분 미만 일때 분 앞에 0을 붙여준다 ex) 01,02,03...
   const minutes =
     newDate.getMinutes() < 10
       ? "0" + newDate.getMinutes()
