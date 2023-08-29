@@ -114,7 +114,6 @@ const completeTodo = (event) => {
 };
 
 /**
- *
  * @param {Object} value todo value
  * @param {Int} index todo 순번
  * @param {Boolean} complete todo 완료 여부 true, false
